@@ -76,26 +76,24 @@ public class MenuDAO {
         return itemsMapper;
     }
 
-    public ItemResponseDto findItemByItemId(Long id) {
-        String sql = "select * from item where id = ?";
-        String sqlForDeliveryType = "select type from delivery where id = ?";
-        String sqlForBadge = "select name from badge where id = ?";
-        RowMapper<ItemResponseDto> itemMapper = new RowMapper<ItemResponseDto>() {
-            @Override
-            public ItemResponseDto mapRow(ResultSet rs, int rowNum) throws SQLException {
-                String id = rs.getString("id");
-                String image = rs.getString("image");
-                String alt = rs.getString("alt");
-                List<String> deliveryTypes = jdbcTemplate.queryForList(sqlForDeliveryType, new Object[]{id}, String.class);
-                String title = rs.getString("title");
-                String description = rs.getString("description");
-                String nPrice = rs.getString("n_price");
-                String sPrice = rs.getString("s_price");
-                sPrice = sPrice.replace("원","");
-                List<String> badges = jdbcTemplate.queryForList(sqlForBadge, new Object[]{id}, String.class);
-                return new ItemResponseDto(id, image, alt, deliveryTypes, title, description, nPrice, sPrice, badges);
-            }
-        };
-        return jdbcTemplate.queryForObject(sql, new Object[]{id}, itemMapper);
-    }
+
+public ItemResponseDto findItemById(Long id)  {
+    String sqlForItem = "select id, image, title, n_price, s_price, description from item where id = ?";
+    String sqlForDelivery = "select type from delivery where id = ?";
+    String sqlForBadge = "select name from badge where id = ?";
+
+
+    RowMapper<ItemResponseDto> itemMapper = (rs, rowNum) -> ItemResponseDto.builder()
+            .alt(rs.getString("title"))
+            .badge(jdbcTemplate.queryForList(sqlForBadge, new Object[]{id}, String.class))
+            .delivery_type(jdbcTemplate.queryForList(sqlForDelivery, new Object[]{id}, String.class))
+            .description(rs.getString("description"))
+            .detail_hash(rs.getString("id"))
+            .image(rs.getString("image"))
+            .n_price(rs.getString("n_price"))
+            .s_price(rs.getString("s_price"))
+            .title(rs.getString("title"))
+            .build();
+    return jdbcTemplate.queryForObject(sqlForItem, new Object[]{id}, itemMapper);
+}
 }

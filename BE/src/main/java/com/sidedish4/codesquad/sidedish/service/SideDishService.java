@@ -77,7 +77,7 @@ public class SideDishService {
     }
 
 
-    public List<ItemResponseDto> returnMenuItems(String menuName) {
+    public List<ItemResponseDto> findAllItemsByMenuName(String menuName) {
         Map<String, Long> menuNames = new HashMap<String, Long>() {{
             put("main", 1L);
             put("soup", 2L);
@@ -86,8 +86,8 @@ public class SideDishService {
         return menuDAO.findMenuItemsByMenuId(menuNames.get(menuName));
     }
 
-    public ItemResponseDto returnMenuItem(Long id, String menuName) {
-        return menuDAO.findItemByItemId(id);
+    public ItemResponseDto findItemById(Long id) {
+        return menuDAO.findItemById(id);
     }
 
     public DetailDto returnDeatailItem(Long detailHash) {

@@ -50,13 +50,13 @@ public class SidedishApiController {
 
     @GetMapping("/{menuName}")
     public ResponseEntity<AllItemResponseDto> menuItems(@PathVariable("menuName") String menuName) {
-        List<ItemResponseDto> result = sideDishService.returnMenuItems(menuName);
+        List<ItemResponseDto> result = sideDishService.findAllItemsByMenuName(menuName);
         return new ResponseEntity<>(new AllItemResponseDto("Ok", result), HttpStatus.OK);
     }
 
     @GetMapping("/{menuName}/{id}")
-    public ResponseEntity<ItemResponseDto> menuItem(@PathVariable("id") Long id, @PathVariable("menuName") String menuName) {
-        ItemResponseDto result = sideDishService.returnMenuItem(id,menuName);
+    public ResponseEntity<ItemResponseDto> menuItem(@PathVariable("id") Long id) {
+        ItemResponseDto result = sideDishService.findItemById(id);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
