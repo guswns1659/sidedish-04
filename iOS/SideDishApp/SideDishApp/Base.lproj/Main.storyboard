@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fs1-ue-OF0">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BMDOHYEON_otf.otf">
+            <string>BMDoHyeon-OTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="Jxb-gz-QBf">
@@ -16,18 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kig-GB-eT1">
-                                <rect key="frame" x="37.666666666666657" y="95" width="300" height="299.33333333333337"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baminchan" translatesAutoresizingMaskIntoConstraints="NO" id="Kig-GB-eT1">
+                                <rect key="frame" x="37.666666666666657" y="94" width="300" height="300"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kig-GB-eT1" secondAttribute="height" multiplier="1:1" id="QnS-yI-Zp7"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AI-zz-vU6">
-                                <rect key="frame" x="113" y="444" width="149" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="로그인 버튼입니다.">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="132.66666666666666" y="444" width="110" height="36"/>
+                                <fontDescription key="fontDescription" name="BMDoHyeon-OTF" family="BM DoHyeon OTF" pointSize="20"/>
+                                <state key="normal" title="깃허브 로그인">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="PxZ-Nd-e7E" eventType="touchUpInside" id="PNF-uU-Sez"/>
@@ -88,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pe9-F5-lZX">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="140" id="odY-Q3-CFq" customClass="ProductInfoCell" customModule="SideDishApp" customModuleProvider="target">
@@ -104,10 +109,10 @@
                                                         <constraint firstAttribute="width" secondItem="uDf-ge-MrI" secondAttribute="height" multiplier="1:1" id="i0p-TZ-wBi"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-a1-VRO">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-a1-VRO" userLabel="Root Stack View">
                                                     <rect key="frame" x="118" y="21" width="252" height="98"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ctb-Kr-OxT">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ctb-Kr-OxT" userLabel="Title Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="47.333333333333336" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cik-Ju-gqY">
@@ -127,17 +132,17 @@
                                                                 <constraint firstAttribute="bottom" secondItem="cik-Ju-gqY" secondAttribute="bottom" constant="20" symbolic="YES" id="M9b-A2-teL"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6gg-K1-mZh">
-                                                            <rect key="frame" x="0.0" y="45" width="84.333333333333329" height="29.666666666666671"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6gg-K1-mZh" userLabel="Price Stack View">
+                                                            <rect key="frame" x="0.0" y="45" width="84.333333333333329" height="15.666666666666664"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNC-cN-oMk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="8.3333333333333339" height="29.666666666666668"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="8.3333333333333339" height="15.666666666666666"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="listPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne1-gT-JYx">
-                                                                    <rect key="frame" x="13.333333333333343" y="0.0" width="71" height="29.666666666666668"/>
+                                                                    <rect key="frame" x="13.333333333333343" y="0.0" width="71" height="15.666666666666666"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                     <color key="textColor" name="BaeminColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -145,10 +150,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="uap-Uc-l7T">
-                                                            <rect key="frame" x="0.0" y="79.666666666666671" width="50" height="18.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="65.666666666666671" width="50" height="32.333333333333329"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IG-zx-F4I">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="18.333333333333332"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="32.333333333333336"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -175,6 +180,7 @@
                                             <outlet property="productImage" destination="uDf-ge-MrI" id="IIf-HV-vKQ"/>
                                             <outlet property="productSubTitle" destination="bW2-cx-bJp" id="OVV-Xh-Ufi"/>
                                             <outlet property="productTitle" destination="cik-Ju-gqY" id="IeG-wI-nP2"/>
+                                            <segue destination="LZb-5h-Tg4" kind="show" id="30S-fQ-hp1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -189,18 +195,53 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gKR-35-cJg"/>
                     <connections>
                         <outlet property="mainTableView" destination="Pe9-F5-lZX" id="8bP-Sn-Tqd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="-221"/>
+            <point key="canvasLocation" x="988" y="-221.67487684729065"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Cf9-nE-HFp">
+            <objects>
+                <viewController id="LZb-5h-Tg4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KgU-Po-rLb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="D62-XU-4gJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sjV-ni-36Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PM8-tv-Xg9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1999" y="-222"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HPm-aO-jqB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fs1-ue-OF0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S9b-0I-3tg">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AFM-6Z-SGc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f21-d0-200" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45.600000000000001" y="-221.67487684729065"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Baminchan" width="380" height="381.33334350585938"/>
         <image name="flame" catalog="system" width="54" height="64"/>
-        <image name="paperplane" catalog="system" width="64" height="60"/>
         <namedColor name="BaeminColor">
             <color red="0.16470588235294117" green="0.75686274509803919" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
